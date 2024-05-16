@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+    }
+    body{
+      background-color: #212121;
+      color: aliceblue;
+    }
+    .box{
+      height: 100px;
+      width: 100px;
+      border:2px solid black;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+    }
+    #red{
+      color: black;
+      background: red;
+    }
+    #blue{
+      color: black;
+      background: blue;
+    }
+    #yellow{
+      color: black;
+      background: yellow;
+    }
+    #white{
+      color: black;
+      background: white;
+    }
+    #colorbox{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 200px;
+    }
+    #google{
+      background-color: aquamarine;
+    }
+    a{
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <ul id="colorbox">
+      <li id="red"class="box" onclick="alert('Red is clicked')"></li>
+      <!-- onclick attribute is used directly injected an element of html -->
+      <li id="blue"class="box"></li>
+      <li id="yellow"class="box"></li>
+      <li id="white"class="box"></li>
+      <li class="box" style="background-color: wheat;">
+        <a href="https://www.google.com/"id="google">google</a>
+      </li>
+    </ul>
+  </div>
+</body>
+<script>
+ document.getElementById('blue').onclick=function(){
+  alert("Blue is clicked")
+ }
+ const yellowBox=document.querySelector("#yellow")
+ yellowBox.addEventListener('click',function(){
+  alert('Yellow is clicked')
+ },false)
+ //attachEvent()
+ //onEvent()-jequery
+ document.getElementById('white').addEventListener('click',function(e){
+   e.stopPropagation()
+   console.log("white is clicked");
+  })
+  document.getElementById('colorbox').addEventListener('click',function (e) {
+  //  e.stopPropagation()
+  console.log('ul is clicked');
+ })
+ document.getElementById('google').addEventListener('click',function (e){
+  e.preventDefault()
+  console.log('Google is clicked')
+  e.stopPropagation()
+ })
+ document.querySelector('#colorbox').addEventListener('click',function (e) {
+  console.log(e.target);
+  const removeIt=e.target
+  removeIt.remove()
+ const remove=e.target
+ remove.parentNode.removeChild(remove)
+ })
+</script>
+</html>

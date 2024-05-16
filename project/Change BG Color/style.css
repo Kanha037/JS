@@ -1,0 +1,19 @@
+body{
+  background-color: #212121;
+  color: aliceblue;
+}
+.main{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+#start,#stop{
+  cursor: pointer;
+  padding: 10px 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+.main h2{
+  font-size:60px;
+}

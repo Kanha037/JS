@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM 2ndClass</title>
+</head>
+<body style="background-color: #212121;color: #ffff;">
+<div class="parent">
+    <!-- this days -->
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+</div>
+</body>
+<script>
+ const parent=document.querySelector('.parent')
+ console.log(parent);
+//  <div class="parent">
+//     <div class="day">Monday</div>
+//     <div class="day">Tuesday</div>
+//     <div class="day">Wednesday</div>
+//     <div class="day">Thursday</div>
+// </div>
+ console.log(parent.children);
+ //  HTMLCollection(4) [div.day, div.day, div.day, div.day]
+ console.log(parent.children[1]);
+//  <div class="day">Tuesday</div>
+console.log(parent.children[1].innerHTML)
+// Tuesday
+for(let i=0;i<parent.children.length;i++){
+  console.log(parent.children[i]);
+}
+parent.children[0].style.color="red";
+console.log(parent.firstElementChild);
+console.log(parent.lastElementChild);
+const dayone=document.querySelector('.day')
+console.log(dayone);
+console.log(dayone.parentElement);
+console.log(dayone.nextElementSibling);
+console.log('Nodes: ',parent.childNodes);
+
+</script>
+</html>
