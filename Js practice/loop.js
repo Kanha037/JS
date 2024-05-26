@@ -38,4 +38,4 @@
 myarr=[1,2,3,"kanha"]
 for (const val of myarr) {
   console.log(val);
-}
+} 
